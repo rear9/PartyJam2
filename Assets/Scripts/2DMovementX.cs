@@ -12,6 +12,8 @@ public class SimpleSideMovement2D : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _SpriteRenderer;
+
+    [SerializeField] GameObject _AI;
     private Rigidbody2D _rb;
     private float _moveInput;
 
@@ -40,10 +42,12 @@ public class SimpleSideMovement2D : MonoBehaviour
         if (_moveInput != 0)
         {
             _animator.SetBool("IsRunning", true);
+            
         }
         else
         {
             _animator.SetBool("IsRunning", false);
+            
         }
         FlipCharacterX();
     }
@@ -53,6 +57,7 @@ public class SimpleSideMovement2D : MonoBehaviour
         if (transform.position.x > XPosLastFrame)
         {   //moving right
             _SpriteRenderer.flipX = false; 
+           
         }
         else if (transform.position.x < XPosLastFrame)
         {
