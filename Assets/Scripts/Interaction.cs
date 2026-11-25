@@ -3,15 +3,12 @@ using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    private IInteracble InteractableInRange = null;
+    private IInteracble InteractableInRange;
 
     public GameObject interactIcon;
     void Start()
     {
         interactIcon.SetActive(false);
-
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -27,7 +24,6 @@ public class Interaction : MonoBehaviour
         {
             InteractableInRange = interactable;
             interactIcon.SetActive(true);
-
         }
     }
 
@@ -37,7 +33,6 @@ public class Interaction : MonoBehaviour
         {
             InteractableInRange = null;
             interactIcon.SetActive(false);
-
         }
     }
 }
